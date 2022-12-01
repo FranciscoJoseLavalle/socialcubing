@@ -1,0 +1,139 @@
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<
+            GLOBALES
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+/* font-family: 'Roboto', sans-serif; */
+:root {
+    --textWhite: #fff;
+    --textBlack: #000;
+    --radius3: .3rem;
+    --radius5: .5rem;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+@font-face {
+    font-family: 'digital';
+    src: url('./font/digital-7.ttf');
+}
+
+body {
+    background-color: #ddd;
+}
+
+.btn {
+    padding: .4rem;
+    border: none;
+    border-radius: var(--radius3);
+    color: var(--textBlack);
+    background-color: #fff;
+}
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<
+            GLOBALES
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<
+            FORM
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #eee;
+    gap: 1rem;
+    margin: 10rem auto;
+    width: 75%;
+    max-width: 30rem;
+    padding: 2rem;
+    box-shadow: #444 0 0 10px;
+    border-radius: var(--radius5);
+}
+
+.form div {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
+.form input {
+    padding: .5rem;
+    color: var(--textBlack);
+    border: solid #aaa .1rem;
+    border-radius: var(--radius3);
+    outline: none;
+}
+.formBtn {
+    padding: .5rem;
+    background-color: #79a;
+    color: var(--textWhite);
+}
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<
+            FORM
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<
+            HEADER
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+.header {
+    background-color: #333;
+    padding: 2rem;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header__nav-icon img {
+    width: 3.5rem;
+}
+
+.header__nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: .5rem;
+}
+
+.header__nav ul {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.header__nav ul a {
+    color: var(--textWhite);
+    font-size: 1.15rem;
+}
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<
+            HEADER
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+
+.timerContainer {
+    background: linear-gradient(180deg, #79a, #246);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20rem;
+}
+
+.timer {
+    font-size: 10rem;
+    font-family: 'digital';
+    color: var(--textWhite);
+}
