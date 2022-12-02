@@ -71,10 +71,12 @@ body {
     border-radius: var(--radius3);
     outline: none;
 }
+
 .formBtn {
     padding: .5rem;
     background-color: #79a;
     color: var(--textWhite);
+    font-size: 1rem;
 }
 
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -118,7 +120,14 @@ body {
     color: var(--textWhite);
     font-size: 1.15rem;
 }
-
+.header__nav-links-user {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+.header__nav-links-user p{
+    color: var(--textWhite);
+}
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<
             HEADER
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>> */

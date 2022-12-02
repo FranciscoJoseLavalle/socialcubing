@@ -32,9 +32,23 @@ function startTimer() {
     }, 10)
 }
 
+let timeToInit = 0;
+
 addEventListener('keypress', (e) => {
     console.log(e.code);
     if (e.code == "Space") {
+        // setTimeout(() => {
+        //     timeToInit++;
+        //     console.log('Sumando time');
+        // }, 500)
+        // if (timeToInit >= 2) {
         isRunning ? isRunning = false : startTimer();
+        // }
     }
 })
+// addEventListener('keydown', (e) => {
+//     if (timeToInit != 0 || timeToInit != 2) {
+
+//     }
+//     isRunning = false;
+// })
