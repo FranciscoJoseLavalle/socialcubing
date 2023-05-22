@@ -44,40 +44,6 @@ body {
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<
             FORM
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
-.form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #eee;
-    gap: 1rem;
-    margin: 10rem auto;
-    width: 75%;
-    max-width: 30rem;
-    padding: 2rem;
-    box-shadow: #444 0 0 10px;
-    border-radius: var(--radius5);
-}
-
-.form div {
-    display: flex;
-    flex-direction: column;
-    gap: .25rem;
-}
-
-.form input {
-    padding: .5rem;
-    color: var(--textBlack);
-    border: solid #aaa .1rem;
-    border-radius: var(--radius3);
-    outline: none;
-}
-
-.formBtn {
-    padding: .5rem;
-    background-color: #79a;
-    color: var(--textWhite);
-    font-size: 1rem;
-}
 
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<
             FORM
