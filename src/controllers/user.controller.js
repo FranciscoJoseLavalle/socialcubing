@@ -9,6 +9,17 @@ const getUser = async (req, res) => {
         res.status(500).send({ status: "error", error: "Internal error", trace: error })
     }
 }
+const editPhoto = async (req, res) => {
+    try {
+        let { uid, url } = req.body;
+        let user = await userService.getBy({ _id: uid });
+        user.thumbnail = url;
+        await userService.editOne({ _id: uid }, user)
+        res.send({ status: "success", message: "Photo changed", payload: user });
+    } catch (error) {
+        res.status(500).send({ status: "error", error: "Internal error", trace: error })
+    }
+}
 
 const getAllUsers = async (req, res) => {
     try {
@@ -23,7 +34,10 @@ const newPost = async (req, res) => {
     try {
         const { uid, post } = req.body;
         let user = await userService.getBy({ _id: uid });
+        console.log(post);
+        console.log(user);
         let postCreated = await postService.saveOne(post, { uid: user._id })
+        console.log(postCreated);
         user.posts = user.posts.concat(postCreated._id);
         await userService.editOne({ _id: uid }, user)
         await userService.getAllNotes({ _id: uid })
@@ -48,10 +62,7 @@ const addFriend = async (req, res) => {
 const getFriends = async (req, res) => {
     try {
         const { uid } = req.params;
-        console.log("LLEGUÉ");
         let user = await userService.getAllFriends({ _id: uid });
-        console.log("LLEGUÉ??");
-        console.log({ user });
         res.send({ status: "success", message: "All friends", payload: user.friends });
     } catch (error) {
         res.status(500).send({ status: "error", error: "Internal error", trace: error })
@@ -74,5 +85,6 @@ export default {
     getAllPosts,
     newPost,
     addFriend,
-    getFriends
+    getFriends,
+    editPhoto
 }

@@ -4,6 +4,7 @@ import userController from '../controllers/user.controller.js';
 const router = Router();
 
 router.get('/', userController.getAllUsers)
+router.post('/', userController.editPhoto)
 router.get('/:uid', userController.getUser)
 
 router.get('/post', userController.getAllPosts);

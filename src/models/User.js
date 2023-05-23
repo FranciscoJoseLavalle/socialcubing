@@ -10,6 +10,7 @@ export default class User {
             last_name: String,
             password: String,
             email: String,
+            thumbnail: String,
             role: {
                 type: String,
                 enum: ['user', 'admin'],

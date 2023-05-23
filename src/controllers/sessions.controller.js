@@ -41,6 +41,7 @@ const login = async (req, res) => {
             email,
             name: user.first_name,
             fullName: `${user.first_name} ${user.last_name}`,
+            thumbnail: user.thumbnail,
             role: user.role,
             id: user._id,
             friends: user.friends,

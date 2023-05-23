@@ -21,12 +21,10 @@ export default class UserRepository extends GenericRepository {
     }
     getAllFriends = async (params) => {
         try {
-            console.log(params);
             let test = await this.getBy(params).populate('friends');
-            console.log(test);
             return test;
         } catch (error) {
-            console.log(error);
+            return error;
         }
     }
 }

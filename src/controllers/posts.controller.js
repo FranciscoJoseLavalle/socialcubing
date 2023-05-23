@@ -3,7 +3,15 @@ import { postService, userService } from "../services/services.js";
 const getAll = async (req, res) => {
     try {
         let posts = await postService.getAllPopulate();
-        console.log(posts);
+        res.send({ status: "success", message: "All posts", payload: posts });
+    } catch (error) {
+        res.status(500).send({ status: "error", error: "Internal error", trace: error })
+    }
+}
+const getAllFiltered = async (req, res) => {
+    try {
+        const { uid } = req.params
+        let posts = await postService.getAllPopulate({ author: uid });
         res.send({ status: "success", message: "All posts", payload: posts });
     } catch (error) {
         res.status(500).send({ status: "error", error: "Internal error", trace: error })
@@ -36,5 +44,6 @@ const likePost = async (req, res) => {
 export default {
     getAll,
     save,
-    likePost
+    likePost,
+    getAllFiltered
 }

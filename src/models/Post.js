@@ -7,6 +7,7 @@ export default class Post {
     static get schema() {
         return {
             text: String,
+            media: String,
             timestamp: Number,
             comments: [{
                 type: Schema.Types.ObjectId,
