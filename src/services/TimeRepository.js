@@ -6,10 +6,4 @@ export default class TimeRepository extends GenericRepository {
         super(dao, Time.model);
     }
 
-    getAll = async (params, data) => {
-        let user = await this.getBy(params)
-        user.posts.push(data)
-        let result = await this.editOne(params, user);
-        return result;
-    }
 }

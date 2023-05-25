@@ -27,4 +27,12 @@ export default class UserRepository extends GenericRepository {
             return error;
         }
     }
+    getPopulate = async (params, doc) => {
+        try {
+            let result = await this.getBy(params).populate(doc);
+            return result;
+        } catch (error) {
+            return error;
+        }
+    }
 }

@@ -4,6 +4,7 @@ import cors from 'cors';
 import __dirname from './utils.js';
 import sessionsRouter from './routes/sessions.router.js'
 import userRouter from './routes/user.router.js'
+import timesRouter from './routes/times.router.js'
 import postsRouter from './routes/posts.router.js'
 import dotenvConfig from "./config/dotenv.config.js";
 import MongoStore from "connect-mongo";
@@ -45,6 +46,7 @@ app.post('/auth', authMiddleware, (req, res) => {
 })
 app.use('/api/sessions', sessionsRouter);
 app.use('/api/user', userRouter);
+app.use('/api/times', timesRouter);
 app.use('/api/posts', postsRouter);
 
 app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));

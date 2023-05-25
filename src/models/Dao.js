@@ -4,6 +4,7 @@ import dotenvConfig from '../config/dotenv.config.js';
 
 import User from './User.js';
 import Post from './Post.js';
+import Time from './Time.js';
 
 export default class Dao {
     constructor() {
@@ -12,10 +13,12 @@ export default class Dao {
 
         const userSchema = mongoose.Schema(User.schema)
         const postSchema = mongoose.Schema(Post.schema)
+        const timeSchema = mongoose.Schema(Time.schema)
 
         this.models = {
             [User.model]: mongoose.model(User.model, userSchema),
             [Post.model]: mongoose.model(Post.model, postSchema),
+            [Time.model]: mongoose.model(Time.model, timeSchema),
         }
     }
 

@@ -10,8 +10,9 @@ export default class Time {
                 type: Schema.Types.ObjectId,
                 ref: 'Users'
             },
-            time: String,
-            cathegory: String
+            time: Object,
+            cathegory: String,
+            scramble: String
         }
     }
 }
