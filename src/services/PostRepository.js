@@ -12,13 +12,10 @@ export default class PostRepository extends GenericRepository {
         return post;
     }
     getAllPopulate = async (params) => {
-        // let posts = await this.getAll();
-        // let newArray = []
-        // posts.forEach(async (post) => {
-        //     let user = await userService.getBy({ _id: post.author })
-        //     let result = { ...post, author: user }
-        //     newArray.push(result);
-        // })
+        let result = await this.getAll(params).populate(['author', 'comments'])
+        return result
+    }
+    getCommentsPopulate = async (params) => {
         let result = await this.getAll(params).populate('author')
         return result
     }
