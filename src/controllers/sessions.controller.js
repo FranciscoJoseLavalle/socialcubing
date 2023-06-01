@@ -44,9 +44,9 @@ const login = async (req, res) => {
             thumbnail: user.thumbnail,
             role: user.role,
             id: user._id,
-            friends: user.friends,
-            times: user.times,
-            posts: user.posts
+            // friends: user.friends,
+            // times: user.times,
+            // posts: user.posts
         }
         const token = jwt.sign(userResult, dotenvConfig.app.TOKEN, { expiresIn: "30m" })
         res.send({ status: "success", message: "Logged in succesfully", payload: { token, userResult } });

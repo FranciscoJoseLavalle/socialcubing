@@ -62,7 +62,9 @@ const addFriend = async (req, res) => {
 const getFriends = async (req, res) => {
     try {
         const { uid } = req.params;
+        console.log(uid);
         let user = await userService.getAllFriends({ _id: uid });
+        console.log(user);
         res.send({ status: "success", message: "All friends", payload: user.friends });
     } catch (error) {
         res.status(500).send({ status: "error", error: "Internal error", trace: error })
