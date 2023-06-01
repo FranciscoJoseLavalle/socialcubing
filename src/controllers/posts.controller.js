@@ -11,8 +11,9 @@ const getAll = async (req, res) => {
 const getAllFiltered = async (req, res) => {
     try {
         const { uid } = req.params
-        let posts = await postService.getAllPopulate({ author: uid });
-        res.send({ status: "success", message: "All posts", payload: posts });
+        // let posts = await postService.getAllPopulate({ author: uid });
+        let posts = await postService.getAllPopulate({ author: uid }, 'interactions');
+        res.send({ status: "success", message: "All user posts", payload: posts });
     } catch (error) {
         res.status(500).send({ status: "error", error: "Internal error", trace: error })
     }
